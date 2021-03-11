@@ -1,17 +1,8 @@
-space = ' ' * 4
+import fileinput
 
 
-def tab_to_space(file):
-    with open(file) as old_file, open('tab_output.txt', 'w') as new_file:
-        for line in old_file:
-            new_line = line.replace('\t', space)
-            new_file.write(new_line)
-
-
-def space_to_tab(file):
-    with open(file) as old_file, open('space_output.txt', 'w') as new_file:
-        for line in old_file:
-            new_line = line.replace(space, '\t')
-            new_file.write(new_line)
-
-
+def replace_tab_space(file, old_symbol, new_symbol):
+    with fileinput.input(file, inplace=True) as f:
+        for line in f:
+            new_line = line.replace(old_symbol, new_symbol)
+            print(new_line, end='')
