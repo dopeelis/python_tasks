@@ -4,17 +4,14 @@ data = {'one': '1', 'two': '2'}
 
 
 def enumeration(collection):
+    count = 0
     output = []
-    try:
-        for i in range(len(collection)):
-            output.append((i, collection[i]))
-        return output
-    except KeyError:
-        i = 0
-        for key in collection:
-            output.append((i, key))
-            i += 1
-        return output
+    for element in collection:
+        output.append((count, element))
+        count += 1
+    return output
 
 
-print(enumeration(string))
+for i in enumeration([3, 2, 1]):
+    print(i)
+
