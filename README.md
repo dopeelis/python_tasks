@@ -1,5 +1,4 @@
 ## Python tasks
-#
 
 This is a mini-collection of python tasks.
 
